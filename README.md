@@ -1,10 +1,6 @@
 # M2S4---Exercicios
 
 
-# Formulario
-
-https://0rodrigo0.github.io/Formulario/
-
 # Contato:
 
 WhatsApp: 51 984065069.
