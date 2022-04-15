@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      class="opcao"
+      placeholder="Escolha a posição"
+      list="opcoes"
+    />
+    <datalist id="opcoes">
+      <option>Goleiro</option>
+      <option>Lateral Direito</option>
+      <option>Zagueiro</option>
+      <option>Volante</option>
+      <option>Atacante</option>
+    </datalist>
+
+    <button onclick="mostar()">Filtrar</button>
+
+    <div class="mostra"></div>
+
+    <script>
+      function pegaEscolha() {
+        const posicao = document.querySelector(".opcao");
+        return posicao.value;
+      }
+
+      function filtrarJogadores(posicao) {
+        const jogadoresSelecao94 = [
+          {
+            nome: "Taffarel",
+            posicao: "Goleiro",
+          },
+          {
+            nome: "Jorginho",
+            posicao: "Lateral Direito",
+          },
+          {
+            nome: "Ricardo Rocha",
+            posicao: "Zagueiro",
+          },
+          {
+            nome: "Mauro Silva",
+            posicao: "Volante",
+          },
+          {
+            nome: "Bebeto",
+            posicao: "Atacante",
+          },
+          {
+            nome: "Romário",
+            posicao: "Atacante",
+          },
+          {
+            nome: "Dunga",
+            posicao: "Volante",
+          },
+        ];
+        return jogadoresSelecao94.find(function (jogador) {
+          return jogador.posicao == posicao;
+        });
+      }
+
+      function criaEspaco(jogador) {
+        const container = document.createElement("div");
+
+        const nome = document.createElement("h1");
+        nome.innerText = "Nome: " + jogador.nome;
+
+        const posicao = document.createElement("h2");
+        posicao.innerText = "Posição: " + jogador.posicao;
+
+        container.appendChild(nome);
+        container.appendChild(posicao);
+
+        return container;
+      }
+
+      function limpar() {
+        const mostra = document.querySelector(".mostra");
+        mostra.innerText = "";
+      }
+
+      function mostar() {
+        limpar();
+        const jogador = pegaEscolha();
+        console.log(jogador);
+        const jogadoresEscolhidos = filtrarJogadores(jogador);
+
+        const mostra = document.querySelector(".mostra");
+
+        const criaEspacos = criaEspaco(jogadoresEscolhidos);
+        mostra.appendChild(criaEspacos);
+      }
+    </script>
+  </body>
+</html>
