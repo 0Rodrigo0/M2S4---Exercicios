@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForEach</title>
+
+    <style>
+      body {
+        background-color: rgb(71, 67, 67);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #titulo {
+        background-color: darkgray;
+      }
+
+      table {
+        background-color: white;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      th,
+      td {
+        padding: 10px 20px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="titulo"></div>
+    <div id="tabela"></div>
+
+    <script>
+      const jogadoresSelecao94 = [
+        {
+          nome: "Taffarel",
+          posicao: "Goleiro",
+        },
+        {
+          nome: "Jorginho",
+          posicao: "Lateral Direito",
+        },
+        {
+          nome: "Ricardo Rocha",
+          posicao: "Zagueiro",
+        },
+        {
+          nome: "Mauro Silva",
+          posicao: "Volante",
+        },
+        {
+          nome: "Bebeto",
+          posicao: "Atacante",
+        },
+        {
+          nome: "Romário",
+          posicao: "Atacante",
+        },
+        {
+          nome: "Dunga",
+          posicao: "Volante",
+        },
+      ];
+
+      //linhas da tabela (tr), cabeçalho da tabela (th) e dados da tabela (td)
+
+      var div = document.createElement("div");
+      let titulo = document.createElement("h1");
+      titulo.innerText = "Selecao Brasileira 94";
+
+      document.getElementById("titulo").appendChild(titulo);
+
+      var novaTabela = document.createElement("table");
+      document.getElementById("tabela").appendChild(novaTabela);
+
+      var cabecalho = document.createElement("thead");
+
+      let cabecalho1 = document.createElement("th");
+      cabecalho1.innerText = "Jogador";
+      let cabecalho2 = document.createElement("th");
+      cabecalho2.innerText = "Posição";
+
+      cabecalho.appendChild(cabecalho1);
+      cabecalho.appendChild(cabecalho2);
+
+      jogadoresSelecao94.forEach((element, nome, posicao) => {
+        let data = document.createElement("td");
+        data.innerText = element.nome;
+        let data1 = document.createElement("td");
+        data1.innerText = element.posicao;
+        rows = document.createElement("tr");
+        rows.appendChild(data);
+        rows.appendChild(data1);
+        novaTabela.appendChild(rows);
+      });
+
+      novaTabela.appendChild(cabecalho);
+
+      document.getElementById("tabela").appendChild(novaTabela);
+    </script>
+  </body>
+</html>
