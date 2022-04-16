@@ -73,19 +73,16 @@
       var div = document.createElement("div");
       let titulo = document.createElement("h1");
       titulo.innerText = "Selecao Brasileira 94";
-
       document.getElementById("titulo").appendChild(titulo);
 
       var novaTabela = document.createElement("table");
       document.getElementById("tabela").appendChild(novaTabela);
 
       var cabecalho = document.createElement("thead");
-
       let cabecalho1 = document.createElement("th");
       cabecalho1.innerText = "Jogador";
       let cabecalho2 = document.createElement("th");
       cabecalho2.innerText = "Posição";
-
       cabecalho.appendChild(cabecalho1);
       cabecalho.appendChild(cabecalho2);
 
@@ -99,9 +96,7 @@
         rows.appendChild(data1);
         novaTabela.appendChild(rows);
       });
-
       novaTabela.appendChild(cabecalho);
-
       document.getElementById("tabela").appendChild(novaTabela);
     </script>
   </body>
