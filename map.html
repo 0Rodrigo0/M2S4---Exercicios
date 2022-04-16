@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find</title>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      const jogadoresSelecao94 = [
+        {
+          nome: "Taffarel",
+          posicao: "Goleiro",
+        },
+        {
+          nome: "Jorginho",
+          posicao: "Lateral Direito",
+        },
+        {
+          nome: "Ricardo Rocha",
+          posicao: "Zagueiro",
+        },
+        {
+          nome: "Mauro Silva",
+          posicao: "Volante",
+        },
+        {
+          nome: "Bebeto",
+          posicao: "Atacante",
+        },
+        {
+          nome: "Romário",
+          posicao: "Atacante",
+        },
+        {
+          nome: "Dunga",
+          posicao: "Volante",
+        },
+      ];
+
+      // com for normal
+      const nome = [];
+      jogadoresSelecao94.forEach(function (jogador) {
+        nome.push(jogador.nome);
+      });
+      console.log(nome);
+
+      // com map
+      const nome1 = jogadoresSelecao94.map((jogador) => jogador.nome);
+      console.log(nome1);
+    </script>
+  </body>
+</html>
