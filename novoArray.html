@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Map</title>
+    <title>Novo Array</title>
   </head>
   <body>
     <div></div>
@@ -41,16 +41,33 @@
         },
       ];
 
-      // com for normal
-      const nome = [];
-      jogadoresSelecao94.forEach(function (jogador) {
-        nome.push(jogador.nome);
+      const posicoes = jogadoresSelecao94.map(function (jogador) {
+        return jogador.posicao;
       });
-      console.log(nome);
+      console.log(posicoes);
 
-      // com map
-      const nome1 = jogadoresSelecao94.map((jogador) => jogador.nome);
-      console.log(nome1);
+      const posicoesUnicas = [];
+      posicoes.forEach(function (posicao) {
+        if (!posicoesUnicas.includes(posicao)) {
+          posicoesUnicas.push(posicao);
+        }
+      });
+      console.log(posicoesUnicas);
+
+      const resultado = [];
+      posicoesUnicas.forEach(function (posicao) {
+        const jogadoresPosicao = jogadoresSelecao94.filter(
+          (jogador) => jogador.posicao === posicao
+        );
+        const itemResultado = {
+          posicao: posicao,
+          jogadores: jogadoresPosicao.map(
+            (jogPorPosciao) => jogPorPosciao.nome
+          ),
+        };
+        resultado.push(itemResultado);
+      });
+      console.log(resultado);
     </script>
   </body>
 </html>
